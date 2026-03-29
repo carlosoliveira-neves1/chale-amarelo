@@ -125,8 +125,14 @@ export default function ChaleAmareloApp() {
     }
   };
 
-  const goToGallery = () => navigate("galeria");
-  const goToReservations = () => navigate("reservas");
+  const goToGallery = () => {
+    console.log('Navegando para galeria');
+    navigate("galeria");
+  };
+  const goToReservations = () => {
+    console.log('Navegando para reservas');
+    navigate("reservas");
+  };
   const goToHome = () => navigate("inicio");
 
   return (

@@ -230,6 +230,12 @@ export default function AdminPainelPage() {
               <h3 className="mb-4 font-semibold">Acesso Rápido</h3>
               <div className="space-y-2">
                 <a
+                  href="/admin/fotos"
+                  className="block rounded-xl bg-[#2f2a22] px-4 py-3 text-sm text-center font-medium text-white hover:bg-[#3f3528]"
+                >
+                  Gerenciar fotos
+                </a>
+                <a
                   href="/admin/clientes"
                   className="block rounded-xl bg-[#f0c730] px-4 py-3 text-sm text-center font-medium text-[#2f2a22] hover:brightness-95"
                 >

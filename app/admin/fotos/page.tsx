@@ -19,6 +19,8 @@ export default function AdminFotosPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [previewUrl, setPreviewUrl] = useState('');
+  const [logoUrl, setLogoUrl] = useState('');
+  const [logoPreview, setLogoPreview] = useState('');
   const [novaFoto, setNovaFoto] = useState({
     nome: '',
     categoria: 'piscina',
@@ -45,6 +47,11 @@ export default function AdminFotosPage() {
       const stored = localStorage.getItem('chale-fotos');
       if (stored) {
         setFotos(JSON.parse(stored));
+      }
+      const logo = localStorage.getItem('chale-logo');
+      if (logo) {
+        setLogoUrl(logo);
+        setLogoPreview(logo);
       }
     }
   }, [router]);
@@ -96,6 +103,33 @@ export default function AdminFotosPage() {
     alert('Foto adicionada com sucesso!');
   };
 
+  const handleLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (!file.type.startsWith('image/')) {
+        alert('Por favor, selecione apenas arquivos de imagem');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLogoPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleLogoUpload = () => {
+    if (!logoPreview) {
+      alert('Selecione uma imagem para o logo');
+      return;
+    }
+
+    localStorage.setItem('chale-logo', logoPreview);
+    setLogoUrl(logoPreview);
+    alert('Logo atualizado com sucesso!');
+  };
+
   const handleDelete = (id: number) => {
     if (confirm('Tem certeza que deseja excluir esta foto?')) {
       const novasFotos = fotos.filter(f => f.id !== id);
@@ -124,6 +158,47 @@ export default function AdminFotosPage() {
           <p className="mt-2 text-[#665a49]">
             Adicione, visualize e remova fotos do Chalé Amarelo
           </p>
+        </div>
+
+        <div className="mb-8 rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-black/5 md:p-8">
+          <h2 className="mb-4 text-xl font-semibold flex items-center gap-2">
+            <ImageIcon size={24} className="text-[#d8a400]" />
+            Logo do Chalé
+          </h2>
+          
+          <div className="grid gap-6 md:grid-cols-2">
+            <div>
+              <label className="mb-2 block text-sm font-medium">Selecionar Logo</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleLogoChange}
+                className="w-full rounded-2xl border border-[#e2d8c5] bg-[#fcfbf8] px-4 py-3 text-sm outline-none transition focus:border-[#d8a400]"
+              />
+              <button
+                onClick={handleLogoUpload}
+                disabled={!logoPreview}
+                className="mt-3 w-full rounded-2xl bg-[#2f2a22] px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-[#3f3528] disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Atualizar Logo
+              </button>
+            </div>
+            
+            {logoPreview && (
+              <div>
+                <p className="mb-2 text-sm font-medium">Preview do Logo:</p>
+                <div className="overflow-hidden rounded-2xl border-2 border-[#e2d8c5] bg-white p-4">
+                  <img src={logoPreview} alt="Logo preview" className="h-32 w-full object-contain" />
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="mt-4 rounded-2xl bg-[#e3f2fd] p-4">
+            <p className="text-sm text-[#1565c0]">
+              <strong>✓ Integração Automática:</strong> O logo aparecerá automaticamente no header do site!
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1fr_400px]">

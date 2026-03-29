@@ -35,6 +35,7 @@ export default function ChaleAmareloApp() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentPage, setCurrentPage] = useState("inicio");
+  const [logo, setLogo] = useState('');
   const [gallery, setGallery] = useState([
     {
       title: "Piscina",
@@ -77,6 +78,11 @@ export default function ChaleAmareloApp() {
         }));
         setGallery(fotosFormatadas);
       }
+    }
+    
+    const logoSalvo = localStorage.getItem('chale-logo');
+    if (logoSalvo) {
+      setLogo(logoSalvo);
     }
   }, []);
 
@@ -141,7 +147,11 @@ export default function ChaleAmareloApp() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
           <button type="button" onClick={goToHome} className="flex min-w-0 items-center gap-3 text-left">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#f0c730] to-[#d8a400] shadow-sm ring-1 ring-black/5 sm:h-14 sm:w-14">
-              <span className="text-2xl font-bold text-white">CA</span>
+              {logo ? (
+                <img src={logo} alt="Logo Chalé Amarelo" className="h-full w-full object-contain" />
+              ) : (
+                <span className="text-2xl font-bold text-white">CA</span>
+              )}
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-xs font-medium uppercase tracking-wider text-[#9a824b] sm:text-sm">

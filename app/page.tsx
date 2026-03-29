@@ -37,32 +37,32 @@ export default function ChaleAmareloApp() {
   const [currentPage, setCurrentPage] = useState("inicio");
   const [gallery, setGallery] = useState([
     {
-      title: "Piscina privativa",
-      image: "/images/piscina.jpg",
+      title: "Piscina",
+      image: "/images/Captura de tela 2026-03-29 152809.png",
+    },
+    {
+      title: "Área externa",
+      image: "/images/Captura de tela 2026-03-29 152839.png",
+    },
+    {
+      title: "Quarto",
+      image: "/images/Captura de tela 2026-03-29 152910.png",
+    },
+    {
+      title: "Fachada",
+      image: "/images/Captura de tela 2026-03-29 152936.png",
     },
     {
       title: "Área gourmet",
-      image: "/images/area-gourmet.jpg",
+      image: "/images/Captura de tela 2026-03-29 152951.png",
     },
     {
-      title: "Suíte confortável",
-      image: "/images/suite.jpg",
-    },
-    {
-      title: "Piscina à noite",
-      image: "/images/piscina-noite.jpg",
-    },
-    {
-      title: "Quarto climatizado",
-      image: "/images/quarto.jpg",
+      title: "Vista externa",
+      image: "/images/Captura de tela 2026-03-29 153035.png",
     },
     {
       title: "Ambiente interno",
-      image: "/images/ambiente-interno.jpg",
-    },
-    {
-      title: "Fachada do Chalé",
-      image: "/images/fachada.jpg",
+      image: "/images/Captura de tela 2026-03-29 153121.png",
     },
   ]);
 

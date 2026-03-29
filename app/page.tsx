@@ -153,12 +153,24 @@ export default function ChaleAmareloApp() {
 
           <div className="flex items-center gap-2">
             <a
+              href="/agendamento"
+              className="hidden rounded-full bg-[#2f2a22] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-[#3f3528] sm:inline-flex"
+            >
+              Agendar
+            </a>
+            <a
               href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
               className="hidden rounded-full bg-[#f0c730] px-4 py-2 text-sm font-medium text-[#2f2a22] shadow-sm transition hover:scale-[1.02] sm:inline-flex"
             >
               Reservar agora
+            </a>
+            <a
+              href="/admin/login"
+              className="hidden rounded-full border border-[#d9ccb1] bg-white px-4 py-2 text-sm font-medium text-[#2f2a22] shadow-sm transition hover:border-[#d8a400] hover:text-[#d8a400] sm:inline-flex"
+            >
+              Entrar
             </a>
             <button
               type="button"

@@ -187,11 +187,19 @@ export default function AdminFotosPage() {
                 </button>
               </div>
 
-              <div className="mt-6 rounded-2xl bg-[#fff4c8] p-4">
-                <p className="text-sm text-[#a67d00]">
-                  <strong>Dica:</strong> As fotos são armazenadas localmente no navegador. 
-                  Para uso em produção, recomenda-se integrar com um serviço de armazenamento em nuvem.
-                </p>
+              <div className="mt-6 space-y-3">
+                <div className="rounded-2xl bg-[#d4edda] p-4">
+                  <p className="text-sm text-[#155724]">
+                    <strong>✓ Integração Automática:</strong> As fotos adicionadas aqui aparecem automaticamente 
+                    na galeria da página principal e no carousel!
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-[#fff4c8] p-4">
+                  <p className="text-sm text-[#a67d00]">
+                    <strong>Dica:</strong> As fotos são armazenadas localmente no navegador. 
+                    Para uso em produção, recomenda-se integrar com um serviço de armazenamento em nuvem.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

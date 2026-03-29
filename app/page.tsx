@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Menu,
   X,
@@ -35,40 +35,50 @@ export default function ChaleAmareloApp() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentPage, setCurrentPage] = useState("inicio");
+  const [gallery, setGallery] = useState([
+    {
+      title: "Piscina privativa",
+      image: "/images/piscina.jpg",
+    },
+    {
+      title: "Área gourmet",
+      image: "/images/area-gourmet.jpg",
+    },
+    {
+      title: "Suíte confortável",
+      image: "/images/suite.jpg",
+    },
+    {
+      title: "Piscina à noite",
+      image: "/images/piscina-noite.jpg",
+    },
+    {
+      title: "Quarto climatizado",
+      image: "/images/quarto.jpg",
+    },
+    {
+      title: "Ambiente interno",
+      image: "/images/ambiente-interno.jpg",
+    },
+    {
+      title: "Fachada do Chalé",
+      image: "/images/fachada.jpg",
+    },
+  ]);
 
-  const gallery = useMemo(
-    () => [
-      {
-        title: "Piscina privativa",
-        image: "/images/piscina.jpg",
-      },
-      {
-        title: "Área gourmet",
-        image: "/images/area-gourmet.jpg",
-      },
-      {
-        title: "Suíte confortável",
-        image: "/images/suite.jpg",
-      },
-      {
-        title: "Piscina à noite",
-        image: "/images/piscina-noite.jpg",
-      },
-      {
-        title: "Quarto climatizado",
-        image: "/images/quarto.jpg",
-      },
-      {
-        title: "Ambiente interno",
-        image: "/images/ambiente-interno.jpg",
-      },
-      {
-        title: "Fachada do Chalé",
-        image: "/images/fachada.jpg",
-      },
-    ],
-    []
-  );
+  useEffect(() => {
+    const fotosAdmin = localStorage.getItem('chale-fotos');
+    if (fotosAdmin) {
+      const fotos = JSON.parse(fotosAdmin);
+      if (fotos.length > 0) {
+        const fotosFormatadas = fotos.map((foto: any) => ({
+          title: foto.nome,
+          image: foto.url,
+        }));
+        setGallery(fotosFormatadas);
+      }
+    }
+  }, []);
 
   const amenities = [
     { icon: Home, label: "Piscina privativa" },

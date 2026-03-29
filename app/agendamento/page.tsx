@@ -132,7 +132,7 @@ export default function AgendamentoPage() {
                   <button
                     key={index}
                     onClick={() => handleDateClick(date)}
-                    disabled={!date || !available || isPast}
+                    disabled={!date || !available || !!isPast}
                     className={`
                       aspect-square rounded-lg p-1 text-xs transition sm:rounded-xl sm:p-2 sm:text-sm
                       ${!date ? 'invisible' : ''}

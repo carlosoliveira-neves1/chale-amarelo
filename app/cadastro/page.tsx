@@ -145,10 +145,11 @@ export default function CadastroPage() {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium">CPF</label>
+                <label className="mb-2 block text-sm font-medium">CPF *</label>
                 <input
                   type="text"
                   name="cpf"
+                  required
                   value={formData.cpf}
                   onChange={handleChange}
                   className="w-full rounded-2xl border border-[#e2d8c5] bg-[#fcfbf8] px-4 py-3 text-sm outline-none transition focus:border-[#d8a400]"
@@ -157,10 +158,11 @@ export default function CadastroPage() {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium">Data de Nascimento</label>
+                <label className="mb-2 block text-sm font-medium">Data de Nascimento *</label>
                 <input
                   type="date"
                   name="dataNascimento"
+                  required
                   value={formData.dataNascimento}
                   onChange={handleChange}
                   className="w-full rounded-2xl border border-[#e2d8c5] bg-[#fcfbf8] px-4 py-3 text-sm outline-none transition focus:border-[#d8a400]"

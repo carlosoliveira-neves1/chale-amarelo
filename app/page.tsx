@@ -140,12 +140,14 @@ export default function ChaleAmareloApp() {
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#fbf7ef]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
           <button type="button" onClick={goToHome} className="flex min-w-0 items-center gap-3 text-left">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 sm:h-14 sm:w-14">
-              <img src="/images/logo.jpg" alt="Logo Chalé Amarelo" className="h-full w-full object-contain" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#f0c730] to-[#d8a400] shadow-sm ring-1 ring-black/5 sm:h-14 sm:w-14">
+              <span className="text-2xl font-bold text-white">CA</span>
             </div>
-            <div className="min-w-0">
-              <p className="truncate text-[10px] uppercase tracking-[0.22em] text-[#9a824b] sm:text-xs">Itanhaém • SP</p>
-              <h1 className="truncate text-base font-semibold sm:text-lg">Chalé Amarelo</h1>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-xs font-medium uppercase tracking-wider text-[#9a824b] sm:text-sm">
+                Itanhaém • SP
+              </p>
+              <h1 className="truncate text-base font-bold sm:text-lg">Chalé Amarelo</h1>
             </div>
           </button>
 

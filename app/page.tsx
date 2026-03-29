@@ -258,8 +258,8 @@ export default function ChaleAmareloApp() {
       {currentPage === "inicio" && (
         <main>
           <section className="relative overflow-hidden px-4 pb-8 pt-4 sm:pt-6 md:px-8 md:pb-16 md:pt-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(240,199,48,0.18),_transparent_35%)]" />
-            <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 md:gap-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(240,199,48,0.18),_transparent_35%)] pointer-events-none" />
+            <div className="relative z-10 mx-auto grid max-w-7xl gap-6 md:grid-cols-2 md:gap-10">
               <div className="order-2 flex flex-col justify-center md:order-1">
                 <span className="mb-3 inline-flex w-fit rounded-full border border-[#eadfca] bg-white/90 px-4 py-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#9a824b] sm:text-xs">
                   Casa de temporada na praia

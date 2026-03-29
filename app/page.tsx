@@ -4,36 +4,31 @@ import { useMemo, useState } from "react";
 import {
   Menu,
   X,
-  Waves,
-  BedDouble,
-  UtensilsCrossed,
-  MapPin,
-  MessageCircle,
-  ChevronLeft,
-  ChevronRight,
-  Star,
-  ShieldCheck,
-  Clock3,
   Home,
-  Image as ImageIcon,
-  CalendarDays,
-  CircleHelp,
+  Image,
+  Calendar,
+  HelpCircle,
   Check,
   Users,
   Car,
-  Bath,
+  Star,
+  Shield,
+  Clock,
+  MessageCircle,
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
   Wifi,
   Sun,
-  Navigation,
 } from "lucide-react";
 
 const whatsappLink = "https://wa.me/5515991716046";
 
 const pages = [
   { id: "inicio", label: "Início", icon: Home },
-  { id: "galeria", label: "Galeria", icon: ImageIcon },
-  { id: "reservas", label: "Reservas", icon: CalendarDays },
-  { id: "duvidas", label: "Dúvidas", icon: CircleHelp },
+  { id: "galeria", label: "Galeria", icon: Image },
+  { id: "reservas", label: "Reservas", icon: Calendar },
+  { id: "duvidas", label: "Dúvidas", icon: HelpCircle },
 ];
 
 export default function ChaleAmareloApp() {
@@ -76,18 +71,18 @@ export default function ChaleAmareloApp() {
   );
 
   const amenities = [
-    { icon: Waves, label: "Piscina privativa" },
-    { icon: UtensilsCrossed, label: "Área gourmet" },
-    { icon: BedDouble, label: "Quartos climatizados" },
+    { icon: Home, label: "Piscina privativa" },
+    { icon: Home, label: "Área gourmet" },
+    { icon: Home, label: "Quartos climatizados" },
     { icon: Wifi, label: "Wi‑Fi" },
-    { icon: Bath, label: "Banheiro equipado" },
+    { icon: Home, label: "Banheiro equipado" },
     { icon: Car, label: "Acesso prático" },
   ];
 
   const structureItems = [
     { icon: Users, title: "Ideal para família", text: "Ambiente confortável para dias de descanso e lazer." },
     { icon: Sun, title: "Clima de praia", text: "Visual leve, ensolarado e perfeito para temporada." },
-    { icon: ShieldCheck, title: "Estadia aconchegante", text: "Espaço moderno para curtir com mais privacidade." },
+    { icon: Shield, title: "Estadia aconchegante", text: "Espaço moderno para curtir com mais privacidade." },
   ];
 
   const faqItems = [
@@ -241,7 +236,7 @@ export default function ChaleAmareloApp() {
                     onClick={goToGallery}
                     className="inline-flex items-center justify-center rounded-full border border-[#d9ccb1] bg-white px-6 py-3.5 text-sm font-medium transition hover:border-[#d8a400] hover:text-[#d8a400]"
                   >
-                    Ver fotos reais
+                    Ver fotos
                   </button>
                 </div>
 
@@ -332,8 +327,8 @@ export default function ChaleAmareloApp() {
           <section className="mx-auto max-w-7xl px-4 py-2 md:px-8">
             <div className="grid gap-3 md:grid-cols-3 md:gap-6">
               {[
-                { icon: ShieldCheck, title: "Ambiente acolhedor", text: "Visual limpo e elegante para transmitir confiança já na primeira visita." },
-                { icon: Clock3, title: "Reserva rápida", text: "Layout pensado para celular, com leitura rápida e acesso direto ao contato." },
+                { icon: Shield, title: "Ambiente acolhedor", text: "Visual limpo e elegante para transmitir confiança já na primeira visita." },
+                { icon: Clock, title: "Reserva rápida", text: "Layout pensado para celular, com leitura rápida e acesso direto ao contato." },
                 { icon: Star, title: "Mais desejo de estadia", text: "Fotos grandes e blocos bem organizados para valorizar cada detalhe do chalé." },
               ].map((item) => {
                 const Icon = item.icon;
@@ -509,7 +504,7 @@ export default function ChaleAmareloApp() {
                 <div className="rounded-2xl bg-[#fcfbf8] p-4 ring-1 ring-black/5">
                   <div className="flex items-start gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fff1b8] text-[#a67d00]">
-                      <Navigation size={18} />
+                      <MapPin size={18} />
                     </div>
                     <div>
                       <p className="font-semibold">Atendimento rápido</p>

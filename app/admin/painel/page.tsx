@@ -147,7 +147,7 @@ export default function AdminPainelPage() {
                     <button
                       key={index}
                       onClick={() => toggleDateAvailability(date)}
-                      disabled={!date || isPast}
+                      disabled={!date || !!isPast}
                       className={`
                         aspect-square rounded-xl p-2 text-sm transition relative
                         ${!date ? 'invisible' : ''}

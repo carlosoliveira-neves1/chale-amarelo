@@ -94,31 +94,31 @@ export default function AgendamentoPage() {
           <p className="mt-2 text-[#665a49]">Consulte as datas disponíveis e faça sua reserva</p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-black/5 md:p-8">
-            <div className="mb-6 flex items-center justify-between">
-              <h2 className="text-xl font-semibold">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+          <div className="rounded-[2rem] bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6 md:p-8">
+            <div className="mb-4 flex flex-col gap-3 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="text-lg font-semibold sm:text-xl">
                 {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
               </h2>
               <div className="flex gap-2">
                 <button
                   onClick={prevMonth}
-                  className="rounded-xl bg-[#f7f3ea] p-2 hover:bg-[#eee8d5]"
+                  className="flex-1 rounded-xl bg-[#f7f3ea] p-2 hover:bg-[#eee8d5] sm:flex-none"
                 >
-                  <ArrowLeft size={20} />
+                  <ArrowLeft size={18} />
                 </button>
                 <button
                   onClick={nextMonth}
-                  className="rounded-xl bg-[#f7f3ea] p-2 hover:bg-[#eee8d5]"
+                  className="flex-1 rounded-xl bg-[#f7f3ea] p-2 hover:bg-[#eee8d5] sm:flex-none"
                 >
-                  <ArrowLeft size={20} className="rotate-180" />
+                  <ArrowLeft size={18} className="rotate-180" />
                 </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-7 gap-2">
+            <div className="grid grid-cols-7 gap-1 sm:gap-2">
               {dayNames.map(day => (
-                <div key={day} className="text-center text-xs font-medium text-[#9a824b]">
+                <div key={day} className="text-center text-[10px] font-medium text-[#9a824b] sm:text-xs">
                   {day}
                 </div>
               ))}
@@ -134,12 +134,12 @@ export default function AgendamentoPage() {
                     onClick={() => handleDateClick(date)}
                     disabled={!date || !available || isPast}
                     className={`
-                      aspect-square rounded-xl p-2 text-sm transition
+                      aspect-square rounded-lg p-1 text-xs transition sm:rounded-xl sm:p-2 sm:text-sm
                       ${!date ? 'invisible' : ''}
                       ${isPast ? 'text-gray-300 cursor-not-allowed' : ''}
                       ${available && !isPast ? 'bg-green-50 text-green-700 hover:bg-green-100 cursor-pointer' : ''}
                       ${!available && !isPast && date ? 'bg-red-50 text-red-400 cursor-not-allowed' : ''}
-                      ${isSelected ? 'bg-[#f0c730] text-[#2f2a22] font-bold' : ''}
+                      ${isSelected ? 'bg-[#f0c730] text-[#2f2a22] font-bold ring-2 ring-[#d8a400]' : ''}
                     `}
                   >
                     {date ? date.getDate() : ''}
@@ -164,8 +164,8 @@ export default function AgendamentoPage() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-black/5 md:p-8">
-            <h2 className="mb-6 text-xl font-semibold">Dados da Reserva</h2>
+          <div className="rounded-[2rem] bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6 md:p-8">
+            <h2 className="mb-4 text-lg font-semibold sm:mb-6 sm:text-xl">Dados da Reserva</h2>
             
             {selectedDate && (
               <div className="mb-6 rounded-2xl bg-[#fff4c8] p-4">

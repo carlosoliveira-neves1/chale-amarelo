@@ -206,11 +206,34 @@ export default function ChaleAmareloApp() {
                   </button>
                 );
               })}
-              <a href={whatsappLink}
-                target="_blank"
-                rel="noreferrer" className="mt-2 rounded-full bg-[#f0c730] px-4 py-3 text-center font-medium text-[#2f2a22]">
-                Reservar agora
-              </a>
+              <div className="mt-3 space-y-2">
+                <a 
+                  href="/cadastro" 
+                  className="block rounded-xl border border-[#d9ccb1] bg-white px-4 py-3 text-center font-medium text-[#2f2a22]"
+                >
+                  Cadastre-se
+                </a>
+                <a 
+                  href="/agendamento" 
+                  className="block rounded-xl bg-[#2f2a22] px-4 py-3 text-center font-medium text-white"
+                >
+                  Agendar
+                </a>
+                <a 
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noreferrer" 
+                  className="block rounded-xl bg-[#f0c730] px-4 py-3 text-center font-medium text-[#2f2a22]"
+                >
+                  Reservar agora
+                </a>
+                <a 
+                  href="/admin/login" 
+                  className="block rounded-xl border border-[#d9ccb1] bg-white px-4 py-3 text-center font-medium text-[#2f2a22]"
+                >
+                  Entrar (Admin)
+                </a>
+              </div>
             </div>
           </div>
         )}

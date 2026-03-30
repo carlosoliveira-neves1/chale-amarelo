@@ -20,6 +20,7 @@ import {
   MapPin,
   Wifi,
   Sun,
+  Instagram,
 } from "lucide-react";
 
 const whatsappLink = "https://wa.me/5515991716046";
